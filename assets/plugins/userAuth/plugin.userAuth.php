@@ -6,7 +6,7 @@ if (isset($_REQUEST['id']) && $_REQUEST['a'] == 88) {
         include_once (MODX_BASE_PATH . 'assets/lib/MODxAPI/modUsers.php');
         $user = new modUsers($modx);
         if ($_REQUEST['auth']) {
-            if (!$uid) {
+            if (!$uid || $uid != $id) {
                 $user->authUser($id);
                 $uid = $user->getID();
             }
