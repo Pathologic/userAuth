@@ -17,8 +17,8 @@ if (isset($_REQUEST['id']) && $_REQUEST['a'] == 88) {
             $uid = 0;
         }
     }
-    $auth = $uid ? 0 : 1;
-    $actionName = $uid ? 'Выйти' : 'Авторизовать';
+    $auth = $uid == $id ? 0 : 1;
+    $actionName = $uid == $id ? 'Выйти' : 'Авторизовать';
     $output = <<< OUT
 <script type="text/javascript">
 (function(){
