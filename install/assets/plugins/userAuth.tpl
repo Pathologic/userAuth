@@ -6,7 +6,7 @@
  * 
  * @category    plugin
  * @version     1.0.0
- * @properties  &model=User model;text;\modUsers
+ * @properties  &model=User model;text;
  * @internal    @events OnManagerMainFrameHeaderHTMLBlock
 **/
 
