@@ -1,8 +1,13 @@
 <?php
-if (!isset($model) || !class_exists($model)) {
-    $model = 'modUsers';
-    include_once(MODX_BASE_PATH . 'assets/lib/MODxAPI/modUsers.php');
+if (function_exists('app')) {
+    $model = isset($params['model']) && class_exists($params['model']) ? $params['model'] : '\\Pathologic\\EvolutionCMS\\MODxAPI\\modUsers';
+} else {
+    if (!isset($model) || !class_exists($model)) {
+        $model = 'modUsers';
+        include_once(MODX_BASE_PATH . 'assets/lib/MODxAPI/modUsers.php');
+    }
 }
+
 if (isset($_REQUEST['id']) && $_REQUEST['a'] == 88) {
     $id = (int)$_REQUEST['id'];
     $uid = $modx->getLoginUserID('web');
