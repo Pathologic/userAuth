@@ -15,7 +15,7 @@ if (isset($_REQUEST['id']) && $_REQUEST['a'] == 88) {
         $user = new $model($modx);
         if ($_REQUEST['auth']) {
             if (!$uid || $uid != $id) {
-                $user->authUser($id);
+                $user->authUser($id, 0, 'WebLoginPE', true);
                 $uid = $user->getID();
             }
             $auth = 0;
